@@ -1,0 +1,12 @@
+FruitPrices = {'Apples':2.00, 'Oranges':1.50, 'Pears':1.75, 'Limes':0.75, 'Strawberries':1.00}
+def BuyLotsOfFruit(OrderList):
+    TotalCost = 0.0
+    for Order in OrderList:
+        
+        Fruit, Multiplier = Order
+        TotalCost += FruitPrices[Fruit]*Multiplier
+    return TotalCost
+#Main Method
+if __name__ == '__main__':
+    OrderList = [('Apples',2.0), ('Pears',3.0), ('Limes',4.0)]
+    print ('Cost of', OrderList, 'is', BuyLotsOfFruit(OrderList))
