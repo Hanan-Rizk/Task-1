@@ -1,0 +1,20 @@
+import shop
+def ShopSmart(OrderList, FruitShops):
+    BestShop = FruitShops[0]
+    LowestCost = BestShop.getPriceOfOrder(OrderList)
+    for shop in FruitShops[1:]:
+        Cost = shop.getPriceOfOrder(OrderList)
+        if Cost < LowestCost:
+            BestShop = shop
+            LowestCost = Cost
+    return BestShop
+if __name__ == '__main__':
+    Orders = [('Apples', 1.0), ('Oranges', 3.0)]
+    Dir1 = { 'Apples': 2.0, 'Oranges': 1.0}
+    Shop1 = shop.FruitShop('Shop1', Dir1)
+    Dir2 = { 'Apples': 1.0, 'Oranges': 5.0}
+    Shop2= shop.FruitShop('Shop2', Dir2)
+    shops = [Shop1, Shop2]
+    print ('For Orders', Orders, ',The best shop is', ShopSmart(Orders, Shops).getName())
+    Orders = [('Apples', 3.0)]
+    print ('For Orders', Orders, ',The best shop is', ShopSmart(Orders, Shops).getName())
