@@ -1,0 +1,11 @@
+def add(a,b):
+    "Return the sum of a and b"
+    sum = int(a) + int(b)
+    print("Passed a = %s and b = %s, returning a + b = %s" %(a, b, sum))
+    return sum
+    
+print("enter the first number")
+num1 = input()
+print("enter the second number")
+num2 = input()
+add(num1,num2)
